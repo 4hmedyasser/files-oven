@@ -132,7 +132,286 @@ namespace Test
             }
             return true;
         }
-
+        
+                bool isApplied(int j)
+        {
+            int choice;
+            Console.WriteLine(" Apply conditions on\n   1- Numerical values(Equal, More or Less than a specific value).\n   2- Text fields.\n");
+            choice = Console.Read();
+            switch (choice)
+            {
+                case 1:
+                    int choice2;
+                    Console.WriteLine(" 1- Equals to value.\n 2- More than a value.\n 3- Less than a value.\n 4- More than or Equal a value.\n 5- Less than or Equal a value.\n 6- More than a value and Less than a value.\n 7- More than or Equal a value and Less than or Equal a value.\n 8- More than or Equal a value and Less than a value.\n 9- More than a value and Less than or Equal a value.\n");
+                    choice2 = Console.Read();
+                    int value;
+                    int anotherValue;
+                    switch (choice2)
+                    {
+                        case 1:// = 
+                            Console.WriteLine("Enter the value: ");
+                            value = Console.Read();
+                            for(int i = 0; i < rowsSize; i++)
+                            {
+                                if( Convert.ToInt32(list[i][j]) != value )
+                                {
+                                    //view message box or something of that sort to show where the matching occured
+                                    return false;
+                                }
+                            }
+                            break;
+                        case 2:// >
+                            Console.WriteLine("Enter the value: ");
+                            value = Console.Read();
+                            for (int i = 0; i < rowsSize; i++)
+                            {
+                                if ( !( Convert.ToInt32(list[i][j]) > value )  )
+                                {
+                                    //view message box or something of that sort to show where the matching occured
+                                    return false;
+                                }
+                            }
+                            break;
+                        case 3:// <
+                            Console.WriteLine("Enter the value: ");
+                            value = Console.Read();
+                            for (int i = 0; i < rowsSize; i++)
+                            {
+                                if (  !( Convert.ToInt32(list[i][j]) < value )  )
+                                {
+                                    //view message box or something of that sort to show where the matching occured
+                                    return false;
+                                }
+                            }
+                            break;
+                        case 4:// >=
+                            Console.WriteLine("Enter the value: ");
+                            value = Console.Read();
+                            for (int i = 0; i < rowsSize; i++)
+                            {
+                                if (  !( Convert.ToInt32(list[i][j]) >= value )  )
+                                {
+                                    //view message box or something of that sort to show where the matching occured
+                                    return false;
+                                }
+                            }
+                            break;
+                        case 5:// <=
+                            Console.WriteLine("Enter the value: ");
+                            value = Console.Read();
+                            for (int i = 0; i < rowsSize; i++)
+                            {
+                                if (  !( Convert.ToInt32(list[i][j]) <= value )  )
+                                {
+                                    //view message box or something of that sort to show where the matching occured
+                                    return false;
+                                }
+                            }
+                            break;
+                        case 6:// <     <
+                            Console.WriteLine("More than: ");
+                            value = Console.Read();
+                            Console.WriteLine("Less than: ");
+                            anotherValue = Console.Read();
+                            for(int i = 0; i < rowsSize; i++)
+                            {
+                                if (   !(  ( Convert.ToInt32(list[i][j]) > value ) && ( Convert.ToInt32(list[i][j]) < anotherValue )  )   )
+                                {
+                                    //view message box or something of that sort to show where the matching occured
+                                    return false;
+                                }
+                            }
+                            break;
+                        case 7:// <=    <=
+                            Console.WriteLine("More than or Equal: ");
+                            value = Console.Read();
+                            Console.WriteLine("Less than or Equal: ");
+                            anotherValue = Console.Read();
+                            for (int i = 0; i < rowsSize; i++)
+                            {
+                                if (!( ( Convert.ToInt32(list[i][j]) >= value ) && (Convert.ToInt32(list[i][j]) <= anotherValue ) ) )
+                                {
+                                    //view message box or something of that sort to show where the matching occured
+                                    return false;
+                                }
+                            }
+                            break;
+                        case 8:// <=    <
+                            Console.WriteLine("More than or Equal: ");
+                            value = Console.Read();
+                            Console.WriteLine("Less than: ");
+                            anotherValue = Console.Read();
+                            for (int i = 0; i < rowsSize; i++)
+                            {
+                                if (!((Convert.ToInt32(list[i][j]) >= value ) && (Convert.ToInt32(list[i][j]) < anotherValue ) ) )
+                                {
+                                    //view message box or something of that sort to show where the matching occured
+                                    return false;
+                                }
+                            }
+                            break;
+                        case 9:// <     <=
+                            Console.WriteLine("More than: ");
+                            value = Console.Read();
+                            Console.WriteLine("Less than or Equal: ");
+                            anotherValue = Console.Read();
+                            for (int i = 0; i < rowsSize; i++)
+                            {
+                                if (!(( Convert.ToInt32(list[i][j]) > value ) && (Convert.ToInt32(list[i][j]) < anotherValue ) ) )
+                                {
+                                    //view message box or something of that sort to show where the matching occured
+                                    return false;
+                                }
+                            }
+                            break;
+                        default:
+                            //view message box or something of that sort to show where the matching occured
+                            break;
+                    }
+                    break;
+                case 2:
+                    Console.WriteLine(" 1- Text has a specific number of characters.\n");
+                    choice2 = Console.Read();
+                    switch (choice2)
+                    {
+                        case 1:
+                            int choice3;
+                            Console.WriteLine(" 1- Equals to value.\n 2- More than a value.\n 3- Less than a value.\n 4- More than or Equal a value.\n 5- Less than or Equal a value.\n 6- More than a value and Less than a value.\n 7- More than or Equal a value and Less than or Equal a value.\n 8- More than or Equal a value and Less than a value.\n 9- More than a value and Less than or Equal a value.\n");
+                            choice3 = Console.Read();
+                            switch (choice3)
+                            {
+                                case 1:// = 
+                                    Console.WriteLine("Enter the value: ");
+                                    value = Console.Read();
+                                    for (int i = 0; i < rowsSize; i++)
+                                    {
+                                        if (list[i][j].Length != value)
+                                        {
+                                            //view message box or something of that sort to show where the matching occured
+                                            return false;
+                                        }
+                                    }
+                                    break;
+                                case 2:// >
+                                    Console.WriteLine("Enter the value: ");
+                                    value = Console.Read();
+                                    for (int i = 0; i < rowsSize; i++)
+                                    {
+                                        if ( !( list[i][j].Length > value )  )
+                                        {
+                                            //view message box or something of that sort to show where the matching occured
+                                            return false;
+                                        }
+                                    }
+                                    break;
+                                case 3:// <
+                                    Console.WriteLine("Enter the value: ");
+                                    value = Console.Read();
+                                    for (int i = 0; i < rowsSize; i++)
+                                    {
+                                        if (  !( list[i][j].Length < value )  )
+                                        {
+                                            //view message box or something of that sort to show where the matching occured
+                                            return false;
+                                        }
+                                    }
+                                    break;
+                                case 4:// >=
+                                    Console.WriteLine("Enter the value: ");
+                                    value = Console.Read();
+                                    for (int i = 0; i < rowsSize; i++)
+                                    {
+                                        if (!( list[i][j].Length >= value )  )
+                                        {
+                                            //view message box or something of that sort to show where the matching occured
+                                            return false;
+                                        }
+                                    }
+                                    break;
+                                case 5:// <=
+                                    Console.WriteLine("Enter the value: ");
+                                    value = Console.Read();
+                                    for (int i = 0; i < rowsSize; i++)
+                                    {
+                                        if (  !( list[i][j].Length <= value )  )
+                                        {
+                                            //view message box or something of that sort to show where the matching occured
+                                            return false;
+                                        }
+                                    }
+                                    break;
+                                case 6:// <     <
+                                    Console.WriteLine("More than: ");
+                                    value = Console.Read();
+                                    Console.WriteLine("Less than: ");
+                                    anotherValue = Console.Read();
+                                    for (int i = 0; i < rowsSize; i++)
+                                    {
+                                        if (! ( ( list[i][j].Length > value ) && ( list[i][j].Length < anotherValue) )  )
+                                        {
+                                            //view message box or something of that sort to show where the matching occured
+                                            return false;
+                                        }
+                                    }
+                                    break;
+                                case 7:// <=    <=
+                                    Console.WriteLine("More than or Equal: ");
+                                    value = Console.Read();
+                                    Console.WriteLine("Less than or Equal: ");
+                                    anotherValue = Console.Read();
+                                    for (int i = 0; i < rowsSize; i++)
+                                    {
+                                        if (!   (  ( list[i][j].Length >= value ) && ( list[i][j].Length <= anotherValue )  )   )
+                                        {
+                                            //view message box or something of that sort to show where the matching occured
+                                            return false;
+                                        }
+                                    }
+                                    break;
+                                case 8:// <=    <
+                                    Console.WriteLine("More than or Equal: ");
+                                    value = Console.Read();
+                                    Console.WriteLine("Less than: ");
+                                    anotherValue = Console.Read();
+                                    for (int i = 0; i < rowsSize; i++)
+                                    {
+                                        if (!  (  ( list[i][j].Length >= value )  && ( list[i][j].Length  < anotherValue )  )   )
+                                        {
+                                            //view message box or something of that sort to show where the matching occured
+                                            return false;
+                                        }
+                                    }
+                                    break;
+                                case 9:// <     <=
+                                    Console.WriteLine("More than: ");
+                                    value = Console.Read();
+                                    Console.WriteLine("Less than or Equal: ");
+                                    anotherValue = Console.Read();
+                                    for (int i = 0; i < rowsSize; i++)
+                                    {
+                                        if (!   (  ( list[i][j].Length > value ) && ( list[i][j].Length < anotherValue )  )   )
+                                        {
+                                            //view message box or something of that sort to show where the matching occured
+                                            return false;
+                                        }
+                                    }
+                                    break;
+                                default:
+                                    //view message box or something of that sort to show where the matching occured
+                                    break;
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                default:
+                    //view message box or something of that sort to show where the matching occured
+                    break;
+            }
+            return true;
+        }
+        
         static void Main(string[] args)
         {
 
