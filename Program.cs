@@ -97,43 +97,53 @@ namespace Test
 
         
         
-        string[] cellDefaults(int no0fColumns)
+        void setDefaultValue(int j, string defaultValue)
         {
-            string[] defaultValues = new string[no0fColumns];
-            for (int i = 0; i<no0fColumns; i++)
+            for (int i = 0; i < rowsSize; i++)
             {
-                defaultValues[i]=Console.ReadLine();
-            }
-            return defaultValues;
-        }
-        void nullCell(bool canBeNull)
-        {
-            if (!canBeNull)
-            {
-                int no0fColumns = Console.Read();
-                cellDefaults(no0fColumns);
-            }
-        }
-        bool isUnique(List<List<string>> list)
-        {
-            for(int j = 0; j < list[0].Count(); j++)//used zero as all columns should have the same size even if one of the columns carried a null value it should have been replaced with '198 142'
-            {
-                for(int i = 0; i < list.Count(); i++)
+                if (list[i][j] == "Ǝ")
                 {
-                    string temp = list[i][j];
-                    for(int ii = 0; ii < list.Count()-i; ii++)
+                    list[i][j] = defaultValue;
+                }
+            }
+        }
+
+        bool isNotNull(int j)
+        {
+            for (int i = 0; i < rowsSize; i++)
+            {
+                if (list[i][j] == "Ǝ")
+                {
+                    //view message box or something of that sort to show where the matching occured
+                    Console.WriteLine("\tFATAL ERROR\nNull Values in column "+j.ToString()+". Default value required.\n");
+                    //
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
+        bool isUnique(int j)
+        {
+            for (int i = 0; i<rowsSize; i++)
+            {
+                string temp = list[i][j];
+                for(int ii = i+1; ii<rowsSize; ii++)
+                {
+                    if(list[ii][j] == temp)
                     {
-                        if (temp == list[ii][j])
-                        {
-                            return false;
-                        }
+                        //view message box or something of that sort to show where the matching occured
+                        Console.WriteLine("\tFATAL ERROR\n Non unique Values in column " + j.ToString() + ".\n");
+                        //
+                        return false;
                     }
                 }
             }
             return true;
         }
-        
-                bool isApplied(int j)
+
+        bool isApplied(int j)
         {
             int choice;
             Console.WriteLine(" Apply conditions on\n   1- Numerical values(Equal, More or Less than a specific value).\n   2- Text fields.\n");
@@ -410,8 +420,7 @@ namespace Test
                     break;
             }
             return true;
-        }
-        
+        }        
         static void Main(string[] args)
         {
 
