@@ -1,0 +1,11 @@
+C:\Users\wa7ed\source\repos\ImportingApplyingModel\ImportingApplyingModel\obj\Debug\ImportingApplyingModel.IMPORTINGDATA.resources
+C:\Users\wa7ed\source\repos\ImportingApplyingModel\ImportingApplyingModel\obj\Debug\ImportingApplyingModel.THEORDEROFTHECOLUMN.resources
+C:\Users\wa7ed\source\repos\ImportingApplyingModel\ImportingApplyingModel\obj\Debug\ImportingApplyingModel.EDITCOLUMN.resources
+C:\Users\wa7ed\source\repos\ImportingApplyingModel\ImportingApplyingModel\obj\Debug\ImportingApplyingModel.Properties.Resources.resources
+C:\Users\wa7ed\source\repos\ImportingApplyingModel\ImportingApplyingModel\obj\Debug\ImportingApplyingModel.csproj.GenerateResource.Cache
+C:\Users\wa7ed\source\repos\ImportingApplyingModel\ImportingApplyingModel\obj\Debug\ImportingApplyingModel.csproj.CoreCompileInputs.cache
+C:\Users\wa7ed\source\repos\ImportingApplyingModel\ImportingApplyingModel\bin\Debug\ImportingApplyingModel.exe.config
+C:\Users\wa7ed\source\repos\ImportingApplyingModel\ImportingApplyingModel\bin\Debug\ImportingApplyingModel.exe
+C:\Users\wa7ed\source\repos\ImportingApplyingModel\ImportingApplyingModel\bin\Debug\ImportingApplyingModel.pdb
+C:\Users\wa7ed\source\repos\ImportingApplyingModel\ImportingApplyingModel\obj\Debug\ImportingApplyingModel.exe
+C:\Users\wa7ed\source\repos\ImportingApplyingModel\ImportingApplyingModel\obj\Debug\ImportingApplyingModel.pdb
