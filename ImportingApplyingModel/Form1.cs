@@ -17,33 +17,34 @@ namespace ImportingApplyingModel
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void GOTOSECONDFORM_Click(object sender, EventArgs e)
         {
-            if(
-                ( string.IsNullOrEmpty(TXTFILEPATH.Text) && string.IsNullOrEmpty(EXCELFILEPATH.Text) ) ||
-                string.IsNullOrEmpty(ROWDELIMITER.Text) || string.IsNullOrEmpty(COLUMNDELIMITER.Text)
-              )
+            if
+            (
+                ( string.IsNullOrEmpty(TEXTFILEPATH.Text) || string.IsNullOrEmpty(ROWDELIMITER.Text) || string.IsNullOrEmpty(COLUMNDELIMITER.Text) )
+                &&
+                string.IsNullOrEmpty(EXCELFILEPATH.Text)
+            )
             {
                 MessageBox.Show("Please enter all needed information" , "Error" , MessageBoxButtons.OK , MessageBoxIcon.Error);
             }
             else
             {
-                Globals.rowDelimiter = ROWDELIMITER.Text[0];
-                Globals.columDelimiter = COLUMNDELIMITER.Text[0];
-                THEORDEROFTHECOLUMN Openform = new THEORDEROFTHECOLUMN();
-                Openform.Show();
-                this.Visible = false;
+                if (string.IsNullOrEmpty(ROWDELIMITER.Text) && string.IsNullOrEmpty(COLUMNDELIMITER.Text))
+                {
+                    THEORDEROFTHECOLUMN Openform = new THEORDEROFTHECOLUMN();
+                    Openform.Show();
+                    this.Visible = false;
+                }
+                else
+                {
+                    Globals.rowDelimiter = ROWDELIMITER.Text[0];
+                    Globals.columDelimiter = COLUMNDELIMITER.Text[0];
+                    THEORDEROFTHECOLUMN Openform = new THEORDEROFTHECOLUMN();
+                    Openform.Show();
+                    this.Visible = false;
+                }
             }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void BROWSETEXTFILE_Click(object sender, EventArgs e)
@@ -52,15 +53,13 @@ namespace ImportingApplyingModel
             if (OpenFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
 
                 string strfilename = OpenFileDialog1.FileName;
-                TXTFILEPATH.Text = strfilename;
+                TEXTFILEPATH.Text = strfilename;
                 Globals.txtFileName = strfilename;
+                Globals.exportCount++;
+                Globals.xmlFileName = "Exported XML file " + Globals.exportCount.ToString() + ".xml";
+                Globals.getText();
             
             }
-        }
-
-        private void TXTFILEPATH_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void BROWSEEXCELFILE_Click(object sender, EventArgs e)
@@ -71,8 +70,10 @@ namespace ImportingApplyingModel
 
                 string strfilename1 = OpenFileDialog2.FileName;
                 EXCELFILEPATH.Text = strfilename1;
-                Globals.xlsxFileName = strfilename1;  
-
+                Globals.xlsxFileName = strfilename1;
+                Globals.exportCount++;
+                Globals.xmlFileName = "Exported XML file " + Globals.exportCount.ToString() + ".xml";
+                Globals.getExcel();
               }
         }
     }

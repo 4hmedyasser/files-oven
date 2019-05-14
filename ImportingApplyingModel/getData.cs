@@ -22,6 +22,12 @@ namespace ImportingApplyingModel
             InitializeComponent();
         }
 
+        private void getData_Load(object sender, EventArgs e)
+        {
+            MessageLable.Text = viewMessage;
+            AlternativeValue.Text = originalValue;
+        }
+
         private void ApplyButton_Click(object sender, EventArgs e)
         {
             if(AlternativeValue.Text == originalValue || String.IsNullOrEmpty(AlternativeValue.Text))
@@ -33,12 +39,6 @@ namespace ImportingApplyingModel
                 Replacement = AlternativeValue.Text;
                 this.Hide();
             }
-        }
-
-        private void getData_Load(object sender, EventArgs e)
-        {
-            MessageLable.Text = viewMessage;
-            AlternativeValue.Text = originalValue;
         }
 
         public string getReplacement()

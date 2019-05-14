@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.TXTFILEPATH = new System.Windows.Forms.TextBox();
+            this.TEXTFILEPATH = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.ROWDELIMITER = new System.Windows.Forms.TextBox();
@@ -53,7 +53,6 @@
             this.label1.Size = new System.Drawing.Size(363, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Importing Data and Apply Constraints Model";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -66,14 +65,13 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Enter the path of the file ";
             // 
-            // TXTFILEPATH
+            // TEXTFILEPATH
             // 
-            this.TXTFILEPATH.Location = new System.Drawing.Point(342, 112);
-            this.TXTFILEPATH.Margin = new System.Windows.Forms.Padding(2);
-            this.TXTFILEPATH.Name = "TXTFILEPATH";
-            this.TXTFILEPATH.Size = new System.Drawing.Size(131, 20);
-            this.TXTFILEPATH.TabIndex = 3;
-            this.TXTFILEPATH.TextChanged += new System.EventHandler(this.TXTFILEPATH_TextChanged);
+            this.TEXTFILEPATH.Location = new System.Drawing.Point(342, 112);
+            this.TEXTFILEPATH.Margin = new System.Windows.Forms.Padding(2);
+            this.TEXTFILEPATH.Name = "TEXTFILEPATH";
+            this.TEXTFILEPATH.Size = new System.Drawing.Size(131, 20);
+            this.TEXTFILEPATH.TabIndex = 3;
             // 
             // label3
             // 
@@ -189,13 +187,12 @@
             this.Controls.Add(this.ROWDELIMITER);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.TXTFILEPATH);
+            this.Controls.Add(this.TEXTFILEPATH);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "IMPORTINGDATA";
             this.Text = "Importing Data";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,7 +202,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.TextBox TXTFILEPATH;
+        public System.Windows.Forms.TextBox TEXTFILEPATH;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.TextBox ROWDELIMITER;

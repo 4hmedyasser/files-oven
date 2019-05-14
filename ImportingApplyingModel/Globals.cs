@@ -32,9 +32,13 @@ namespace ImportingApplyingModel
 
         public static string[] records;
 
-        public static List<List<String>> list;
+        public static List<List<String>> list =  new List<List<string>>();
+
+        public static int exportCount = 0;
 
         public static int rowsSize;
+
+        public static int selectedColumn;
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
@@ -314,7 +318,7 @@ namespace ImportingApplyingModel
 
 
 
-        public static void isGreaterThan(int j, int value, bool ints)
+        public static void isMoreThan(int j, float value, bool ints)
 
         {
 
@@ -326,7 +330,7 @@ namespace ImportingApplyingModel
 
                 {
 
-                    if (Convert.ToInt32(list[i][j]) <= value)
+                    if (float.Parse(list[i][j]) <= value)
 
                     {
 
@@ -368,7 +372,7 @@ namespace ImportingApplyingModel
 
 
 
-        public static void isGreaterThanOrEqual(int j, int value, bool ints)
+        public static void isMoreThanOREqual(int j, float value, bool ints)
 
         {
 
@@ -380,10 +384,10 @@ namespace ImportingApplyingModel
 
                 {
 
-                    if (Convert.ToInt32(list[i][j]) < value)
+                    if (float.Parse(list[i][j]) < value)
 
                     {
-                        getData applyInvalidConstraint = new getData("Value is NOT greater than or equal " + value.ToString() + ". Please enter a valid value.", list[i][j]);
+                        getData applyInvalidConstraint = new getData("Value is NOT greater than NOR equal " + value.ToString() + ". Please enter a valid value.", list[i][j]);
                         applyInvalidConstraint.Show();
                         list[i][j] = applyInvalidConstraint.getReplacement();
                     }
@@ -404,7 +408,7 @@ namespace ImportingApplyingModel
 
                     {
 
-                        getData applyInvalidConstraint = new getData("Value length is NOT greater than or equal " + value.ToString() + ". Please enter a valid value.", list[i][j]);
+                        getData applyInvalidConstraint = new getData("Value length is NOT greater than NOR equal " + value.ToString() + ". Please enter a valid value.", list[i][j]);
                         applyInvalidConstraint.Show();
                         list[i][j] = applyInvalidConstraint.getReplacement();
 
@@ -422,7 +426,7 @@ namespace ImportingApplyingModel
 
 
 
-        public static void isLessThan(int j, int value, bool ints)
+        public static void isLessThan(int j, float value, bool ints)
 
         {
 
@@ -434,7 +438,7 @@ namespace ImportingApplyingModel
 
                 {
 
-                    if (Convert.ToInt32(list[i][j]) >= value)
+                    if (float.Parse(list[i][j]) >= value)
 
                     {
                         getData applyInvalidConstraint = new getData("Value is NOT less than " + value.ToString() + ". Please enter a valid value.", list[i][j]);
@@ -476,7 +480,7 @@ namespace ImportingApplyingModel
 
 
 
-        public static void isLessThanOrEqual(int j, int value, bool ints)
+        public static void isLessThanOREqual(int j, float value, bool ints)
 
         {
 
@@ -488,10 +492,10 @@ namespace ImportingApplyingModel
 
                 {
 
-                    if (Convert.ToInt32(list[i][j]) > value)
+                    if (float.Parse(list[i][j]) > value)
 
                     {
-                        getData applyInvalidConstraint = new getData("Value is NOT less than or equal " + value.ToString() + ". Please enter a valid value.", list[i][j]);
+                        getData applyInvalidConstraint = new getData("Value is NOT less than NOR equal " + value.ToString() + ". Please enter a valid value.", list[i][j]);
                         applyInvalidConstraint.Show();
                         list[i][j] = applyInvalidConstraint.getReplacement();
                     }
@@ -511,7 +515,7 @@ namespace ImportingApplyingModel
                     if (list[i][j].Length > value)
 
                     {
-                        getData applyInvalidConstraint = new getData("Value length is NOT less than or equal " + value.ToString() + ". Please enter a valid value.", list[i][j]);
+                        getData applyInvalidConstraint = new getData("Value length is NOT less than NOR equal " + value.ToString() + ". Please enter a valid value.", list[i][j]);
                         applyInvalidConstraint.Show();
                         list[i][j] = applyInvalidConstraint.getReplacement();
                     }
@@ -528,7 +532,7 @@ namespace ImportingApplyingModel
 
 
 
-        public static void isEqual(int j, int value, bool ints)
+        public static void isEqual(int j, float value, bool ints)
 
         {
 
@@ -540,7 +544,7 @@ namespace ImportingApplyingModel
 
                 {
 
-                    if (Convert.ToInt32(list[i][j]) != value)
+                    if (float.Parse(list[i][j]) != value)
 
                     {
                         list[i][j] = value.ToString();
@@ -582,7 +586,7 @@ namespace ImportingApplyingModel
 
 
 
-        public static void isNotEqual(int j, int value, bool ints)
+        public static void isNOTEqual(int j, float value, bool ints)
 
         {
 
@@ -594,7 +598,7 @@ namespace ImportingApplyingModel
 
                 {
 
-                    if (Convert.ToInt32(list[i][j]) == value)
+                    if (float.Parse(list[i][j]) == value)
 
                     {
 

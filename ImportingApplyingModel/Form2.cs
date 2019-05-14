@@ -23,64 +23,26 @@ namespace ImportingApplyingModel
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            IMPORTINGDATA Openform1 = new IMPORTINGDATA();
-            Openform1.Show();
-            this.Visible = false;
-        }
-
         private void Form2_Load(object sender, EventArgs e)
         {
-            passvalues();
+            CHOOSECOLUMN.DataSource = Globals.list[0];
+            CHOOSECOLUMN.SelectedIndex = 0;
         }
 
-        public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void CONFIRMTOGOTOEDITFORM_Click(object sender, EventArgs e)
         {
-            
-            
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
+            Globals.selectedColumn = CHOOSECOLUMN.SelectedIndex;
+            Console.WriteLine(CHOOSECOLUMN.SelectedIndex);
             EDITCOLUMN openeditform = new EDITCOLUMN();
             openeditform.Show();
             this.Visible = false;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void RETURNTOFIRSTPAGE_Click(object sender, EventArgs e)
         {
-
+            IMPORTINGDATA Openform1 = new IMPORTINGDATA();
+            Openform1.Show();
+            this.Visible = false;
         }
-
-        private void CHOOSECOLUMN_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-        public void passvalues() {
-
-            List<string> intlist = new List<string>();
-            intlist.Add("ahmed");
-            intlist.Add("ali");
-            intlist.Add("omar");
-           
-            CHOOSECOLUMN.DataSource = intlist;
-            CHOOSECOLUMN.SelectedIndex = 0;
-            
-        
-        
-        }
-        
-
     }
 }
