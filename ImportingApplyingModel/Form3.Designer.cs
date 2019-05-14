@@ -41,6 +41,7 @@
             this.ISNULL = new System.Windows.Forms.CheckBox();
             this.RETURNTOSELECTANOTHERCOLUMNORDER = new System.Windows.Forms.Button();
             this.RETURNFROMEDITCOLUMNTOHOMEPAGE = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NUMERICALY
@@ -168,18 +169,18 @@
             // 
             // RETURNTOSELECTANOTHERCOLUMNORDER
             // 
-            this.RETURNTOSELECTANOTHERCOLUMNORDER.Location = new System.Drawing.Point(480, 407);
+            this.RETURNTOSELECTANOTHERCOLUMNORDER.Location = new System.Drawing.Point(391, 407);
             this.RETURNTOSELECTANOTHERCOLUMNORDER.Margin = new System.Windows.Forms.Padding(2);
             this.RETURNTOSELECTANOTHERCOLUMNORDER.Name = "RETURNTOSELECTANOTHERCOLUMNORDER";
-            this.RETURNTOSELECTANOTHERCOLUMNORDER.Size = new System.Drawing.Size(129, 46);
+            this.RETURNTOSELECTANOTHERCOLUMNORDER.Size = new System.Drawing.Size(139, 46);
             this.RETURNTOSELECTANOTHERCOLUMNORDER.TabIndex = 93;
-            this.RETURNTOSELECTANOTHERCOLUMNORDER.Text = "Apply Constraints";
+            this.RETURNTOSELECTANOTHERCOLUMNORDER.Text = "Apply";
             this.RETURNTOSELECTANOTHERCOLUMNORDER.UseVisualStyleBackColor = true;
             this.RETURNTOSELECTANOTHERCOLUMNORDER.Click += new System.EventHandler(this.RETURNTOSELECTANOTHERCOLUMNORDER_Click);
             // 
             // RETURNFROMEDITCOLUMNTOHOMEPAGE
             // 
-            this.RETURNFROMEDITCOLUMNTOHOMEPAGE.Location = new System.Drawing.Point(187, 407);
+            this.RETURNFROMEDITCOLUMNTOHOMEPAGE.Location = new System.Drawing.Point(67, 407);
             this.RETURNFROMEDITCOLUMNTOHOMEPAGE.Margin = new System.Windows.Forms.Padding(2);
             this.RETURNFROMEDITCOLUMNTOHOMEPAGE.Name = "RETURNFROMEDITCOLUMNTOHOMEPAGE";
             this.RETURNFROMEDITCOLUMNTOHOMEPAGE.Size = new System.Drawing.Size(139, 46);
@@ -188,11 +189,22 @@
             this.RETURNFROMEDITCOLUMNTOHOMEPAGE.UseVisualStyleBackColor = true;
             this.RETURNFROMEDITCOLUMNTOHOMEPAGE.Click += new System.EventHandler(this.RETURNFROMEDITCOLUMNTOHOMEPAGE_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(707, 407);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(139, 46);
+            this.button1.TabIndex = 106;
+            this.button1.Text = "Ok";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // EDITCOLUMN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(902, 476);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.NUMERICALY);
             this.Controls.Add(this.LITERALY);
             this.Controls.Add(this.HASCERTAINCONDITION);
@@ -230,5 +242,6 @@
         public System.Windows.Forms.CheckBox ISNULL;
         public System.Windows.Forms.Button RETURNTOSELECTANOTHERCOLUMNORDER;
         public System.Windows.Forms.Button RETURNFROMEDITCOLUMNTOHOMEPAGE;
+        private System.Windows.Forms.Button button1;
     }
 }

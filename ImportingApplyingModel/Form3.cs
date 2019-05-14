@@ -114,6 +114,10 @@ namespace ImportingApplyingModel
                     }  //  numbers
                 }  //  no errors
             }  //  =!=>>=<<=
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
             Globals.setXML();
             THEORDEROFTHECOLUMN openForm2 = new THEORDEROFTHECOLUMN();
             openForm2.Show();
