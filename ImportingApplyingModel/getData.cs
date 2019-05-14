@@ -14,7 +14,7 @@ namespace ImportingApplyingModel
     {
         String viewMessage;
         String originalValue;
-        public String Replacement;
+        public static String Replacement;
         public getData(String viewMessage , String originalValue)
         {
             this.viewMessage = viewMessage;

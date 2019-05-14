@@ -96,7 +96,7 @@ namespace ImportingApplyingModel
 
 
 
-                    if (string.IsNullOrEmpty(cell.Value.ToString()))
+                    if (cell.Value == null)
 
                     {
 
