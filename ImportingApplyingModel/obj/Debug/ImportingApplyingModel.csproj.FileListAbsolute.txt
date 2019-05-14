@@ -9,3 +9,7 @@ C:\Users\wa7ed\source\repos\ImportingApplyingModel\ImportingApplyingModel\bin\De
 C:\Users\wa7ed\source\repos\ImportingApplyingModel\ImportingApplyingModel\bin\Debug\ImportingApplyingModel.pdb
 C:\Users\wa7ed\source\repos\ImportingApplyingModel\ImportingApplyingModel\obj\Debug\ImportingApplyingModel.exe
 C:\Users\wa7ed\source\repos\ImportingApplyingModel\ImportingApplyingModel\obj\Debug\ImportingApplyingModel.pdb
+C:\Users\wa7ed\source\repos\ImportingApplyingModel\ImportingApplyingModel\bin\Debug\GemBox.Spreadsheet.dll
+C:\Users\wa7ed\source\repos\ImportingApplyingModel\ImportingApplyingModel\bin\Debug\GemBox.Spreadsheet.xml
+C:\Users\wa7ed\source\repos\ImportingApplyingModel\ImportingApplyingModel\obj\Debug\ImportingApplyingModel.csprojResolveAssemblyReference.cache
+C:\Users\wa7ed\source\repos\ImportingApplyingModel\ImportingApplyingModel\obj\Debug\ImportingApplyingModel.getData.resources

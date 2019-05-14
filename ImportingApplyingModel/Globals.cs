@@ -242,7 +242,15 @@ namespace ImportingApplyingModel
 
         }
         //////////////////////////////////////////////////////////////////////////////
-        public static bool isNotNull(int j)
+        //////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+        public static void isNotNull(int j)
 
         {
 
@@ -254,23 +262,23 @@ namespace ImportingApplyingModel
 
                 {
 
-                    //view message box or something of that sort to show where the matching occured
-
-                    Console.WriteLine("\tFATAL ERROR\nNull Values in column " + j.ToString() + ". Default value required.\n");
-
-                    //
-
-                    return false;
-
+                    getData applyInvalidConstraint = new getData("Null value detected. Please enter a valid value" , "null");
+                    applyInvalidConstraint.Show();
+                    list[i][j] = applyInvalidConstraint.getReplacement();
+                    
                 }
 
             }
 
-            return true;
-
         }
+
+
+
         //////////////////////////////////////////////////////////////////////////////
-        public static bool isUnique(int j)
+
+
+
+        public static void isUnique(int j)
 
         {
 
@@ -288,13 +296,9 @@ namespace ImportingApplyingModel
 
                     {
 
-                        //view message box or something of that sort to show where the matching occured
-
-                        Console.WriteLine("\tFATAL ERROR\n Non unique Values in column " + j.ToString() + ".\n");
-
-                        //
-
-                        return false;
+                        getData applyInvalidConstraint = new getData("Repeated value detected. Please enter a unique value", list[ii][j]);
+                        applyInvalidConstraint.Show();
+                        list[ii][j] = applyInvalidConstraint.getReplacement();
 
                     }
 
@@ -302,11 +306,15 @@ namespace ImportingApplyingModel
 
             }
 
-            return true;
-
         }
+
+
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        public static bool isGreaterThan(int j, int value, bool ints)
+
+
+
+        public static void isGreaterThan(int j, int value, bool ints)
 
         {
 
@@ -322,7 +330,9 @@ namespace ImportingApplyingModel
 
                     {
 
-                        return false;
+                        getData applyInvalidConstraint = new getData("Value is NOT greater than " + value.ToString() + ". Please enter a valid value.", list[i][j]);
+                        applyInvalidConstraint.Show();
+                        list[i][j] = applyInvalidConstraint.getReplacement();
 
                     }
 
@@ -341,20 +351,24 @@ namespace ImportingApplyingModel
                     if (list[i][j].Length <= value)
 
                     {
-
-                        return false;
-
+                        getData applyInvalidConstraint = new getData("Value length is NOT greater than " + value.ToString() + ". Please enter a valid value.", list[i][j]);
+                        applyInvalidConstraint.Show();
+                        list[i][j] = applyInvalidConstraint.getReplacement();
                     }
 
                 }
 
             }
 
-            return true;
-
         }
+
+
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        public static bool isGreaterThanOrEqual(int j, int value, bool ints)
+
+
+
+        public static void isGreaterThanOrEqual(int j, int value, bool ints)
 
         {
 
@@ -369,9 +383,9 @@ namespace ImportingApplyingModel
                     if (Convert.ToInt32(list[i][j]) < value)
 
                     {
-
-                        return false;
-
+                        getData applyInvalidConstraint = new getData("Value is NOT greater than or equal " + value.ToString() + ". Please enter a valid value.", list[i][j]);
+                        applyInvalidConstraint.Show();
+                        list[i][j] = applyInvalidConstraint.getReplacement();
                     }
 
                 }
@@ -390,7 +404,9 @@ namespace ImportingApplyingModel
 
                     {
 
-                        return false;
+                        getData applyInvalidConstraint = new getData("Value length is NOT greater than or equal " + value.ToString() + ". Please enter a valid value.", list[i][j]);
+                        applyInvalidConstraint.Show();
+                        list[i][j] = applyInvalidConstraint.getReplacement();
 
                     }
 
@@ -398,11 +414,15 @@ namespace ImportingApplyingModel
 
             }
 
-            return true;
-
         }
+
+
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        public static bool isLessThan(int j, int value, bool ints)
+
+
+
+        public static void isLessThan(int j, int value, bool ints)
 
         {
 
@@ -417,9 +437,9 @@ namespace ImportingApplyingModel
                     if (Convert.ToInt32(list[i][j]) >= value)
 
                     {
-
-                        return false;
-
+                        getData applyInvalidConstraint = new getData("Value is NOT less than " + value.ToString() + ". Please enter a valid value.", list[i][j]);
+                        applyInvalidConstraint.Show();
+                        list[i][j] = applyInvalidConstraint.getReplacement();
                     }
 
                 }
@@ -438,7 +458,9 @@ namespace ImportingApplyingModel
 
                     {
 
-                        return false;
+                        getData applyInvalidConstraint = new getData("Value length is NOT less than " + value.ToString() + ". Please enter a valid value.", list[i][j]);
+                        applyInvalidConstraint.Show();
+                        list[i][j] = applyInvalidConstraint.getReplacement();
 
                     }
 
@@ -446,11 +468,15 @@ namespace ImportingApplyingModel
 
             }
 
-            return true;
-
         }
+
+
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        public static bool isLessThanOrEqual(int j, int value, bool ints)
+
+
+
+        public static void isLessThanOrEqual(int j, int value, bool ints)
 
         {
 
@@ -465,9 +491,9 @@ namespace ImportingApplyingModel
                     if (Convert.ToInt32(list[i][j]) > value)
 
                     {
-
-                        return false;
-
+                        getData applyInvalidConstraint = new getData("Value is NOT less than or equal " + value.ToString() + ". Please enter a valid value.", list[i][j]);
+                        applyInvalidConstraint.Show();
+                        list[i][j] = applyInvalidConstraint.getReplacement();
                     }
 
                 }
@@ -485,20 +511,24 @@ namespace ImportingApplyingModel
                     if (list[i][j].Length > value)
 
                     {
-
-                        return false;
-
+                        getData applyInvalidConstraint = new getData("Value length is NOT less than or equal " + value.ToString() + ". Please enter a valid value.", list[i][j]);
+                        applyInvalidConstraint.Show();
+                        list[i][j] = applyInvalidConstraint.getReplacement();
                     }
 
                 }
 
             }
 
-            return true;
-
         }
+
+
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        public static bool isEqual(int j, int value, bool ints)
+
+
+
+        public static void isEqual(int j, int value, bool ints)
 
         {
 
@@ -513,8 +543,8 @@ namespace ImportingApplyingModel
                     if (Convert.ToInt32(list[i][j]) != value)
 
                     {
-
-                        return false;
+                        list[i][j] = value.ToString();
+                        MessageBox.Show("Invalid Number", "The value is NOT equal " + value.ToString() + ". The value was automatically set to the given constraint.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
 
@@ -534,7 +564,9 @@ namespace ImportingApplyingModel
 
                     {
 
-                        return false;
+                        getData applyInvalidConstraint = new getData("Value length is NOT equal " + value.ToString() + ". Please enter a valid value.", list[i][j]);
+                        applyInvalidConstraint.Show();
+                        list[i][j] = applyInvalidConstraint.getReplacement();
 
                     }
 
@@ -542,11 +574,15 @@ namespace ImportingApplyingModel
 
             }
 
-            return true;
-
         }
+
+
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        public static bool isNotEqual(int j, int value, bool ints)
+
+
+
+        public static void isNotEqual(int j, int value, bool ints)
 
         {
 
@@ -562,7 +598,9 @@ namespace ImportingApplyingModel
 
                     {
 
-                        return false;
+                        getData applyInvalidConstraint = new getData("Value is equal to " + value.ToString() + ". Please enter a valid value.", list[i][j]);
+                        applyInvalidConstraint.Show();
+                        list[i][j] = applyInvalidConstraint.getReplacement();
 
                     }
 
@@ -581,18 +619,25 @@ namespace ImportingApplyingModel
                     if (list[i][j].Length == value)
 
                     {
-
-                        return false;
-
+                        getData applyInvalidConstraint = new getData("Value length is equal to " + value.ToString() + ". Please enter a valid value.", list[i][j]);
+                        applyInvalidConstraint.Show();
+                        list[i][j] = applyInvalidConstraint.getReplacement();
                     }
 
                 }
 
             }
 
-            return true;
-
         }
+
+
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
     }
 }
