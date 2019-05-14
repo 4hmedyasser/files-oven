@@ -36,23 +36,23 @@
             // MessageLable
             // 
             this.MessageLable.AutoSize = true;
-            this.MessageLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MessageLable.Location = new System.Drawing.Point(54, 38);
+            this.MessageLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MessageLable.Location = new System.Drawing.Point(12, 21);
             this.MessageLable.Name = "MessageLable";
-            this.MessageLable.Size = new System.Drawing.Size(71, 16);
+            this.MessageLable.Size = new System.Drawing.Size(56, 13);
             this.MessageLable.TabIndex = 0;
             this.MessageLable.Text = "Message: ";
             // 
             // AlternativeValue
             // 
-            this.AlternativeValue.Location = new System.Drawing.Point(142, 73);
+            this.AlternativeValue.Location = new System.Drawing.Point(129, 82);
             this.AlternativeValue.Name = "AlternativeValue";
             this.AlternativeValue.Size = new System.Drawing.Size(198, 20);
             this.AlternativeValue.TabIndex = 1;
             // 
             // ApplyButton
             // 
-            this.ApplyButton.Location = new System.Drawing.Point(200, 122);
+            this.ApplyButton.Location = new System.Drawing.Point(184, 123);
             this.ApplyButton.Name = "ApplyButton";
             this.ApplyButton.Size = new System.Drawing.Size(75, 23);
             this.ApplyButton.TabIndex = 2;

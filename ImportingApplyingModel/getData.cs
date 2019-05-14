@@ -32,7 +32,7 @@ namespace ImportingApplyingModel
         {
             if(AlternativeValue.Text == originalValue || String.IsNullOrEmpty(AlternativeValue.Text))
             {
-                MessageBox.Show("Error", "Please edit the value.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please edit the value.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -45,6 +45,5 @@ namespace ImportingApplyingModel
         {
             return Replacement;
         }
-
     }
 }

@@ -42,6 +42,7 @@
             this.APPLYBEFOREOK = new System.Windows.Forms.Button();
             this.RETURNFROMEDITCOLUMNTOHOMEPAGE = new System.Windows.Forms.Button();
             this.OKANDCHOOSEANOTHERCOLUMN = new System.Windows.Forms.Button();
+            this.caution = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // NUMERICALY
@@ -199,11 +200,23 @@
             this.OKANDCHOOSEANOTHERCOLUMN.UseVisualStyleBackColor = true;
             this.OKANDCHOOSEANOTHERCOLUMN.Click += new System.EventHandler(this.OKANDCHOOSEANOTHERCOLUMN_Click);
             // 
+            // caution
+            // 
+            this.caution.AutoSize = true;
+            this.caution.ForeColor = System.Drawing.Color.Red;
+            this.caution.Location = new System.Drawing.Point(167, 376);
+            this.caution.Name = "caution";
+            this.caution.Size = new System.Drawing.Size(569, 13);
+            this.caution.TabIndex = 107;
+            this.caution.Text = "Caution: In order to write the XML file successfully please keep pressing the App" +
+    "ly button until you do not get any errors.";
+            // 
             // EDITCOLUMN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(902, 476);
+            this.Controls.Add(this.caution);
             this.Controls.Add(this.OKANDCHOOSEANOTHERCOLUMN);
             this.Controls.Add(this.NUMERICALY);
             this.Controls.Add(this.LITERALY);
@@ -243,5 +256,6 @@
         public System.Windows.Forms.Button APPLYBEFOREOK;
         public System.Windows.Forms.Button RETURNFROMEDITCOLUMNTOHOMEPAGE;
         private System.Windows.Forms.Button OKANDCHOOSEANOTHERCOLUMN;
+        private System.Windows.Forms.Label caution;
     }
 }

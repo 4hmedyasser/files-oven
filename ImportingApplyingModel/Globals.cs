@@ -116,11 +116,13 @@ namespace ImportingApplyingModel
 
 
 
-                list.Add(tempList);
+                Globals.list.Add(tempList);
 
-
+                
 
             }
+
+                Globals.rowsSize = Globals.list[0].Count-1;
 
 
 
@@ -135,9 +137,6 @@ namespace ImportingApplyingModel
             Data = File.ReadAllText(txtFileName);
 
             records = Data.Split(rowDelimiter);
-
-            list = new List<List<String>>();
-
 
 
             foreach (string record in records)
@@ -160,7 +159,7 @@ namespace ImportingApplyingModel
 
 
 
-                list.Add(temp);
+                Globals.list.Add(temp);
 
             }
 
@@ -172,7 +171,7 @@ namespace ImportingApplyingModel
 
             if (rowDelimiter == '\n')
 
-                rowsSize = list.ElementAt(0).Count - 1;
+                Globals.rowsSize = Globals.list.ElementAt(0).Count - 1;
 
 
 
@@ -184,7 +183,7 @@ namespace ImportingApplyingModel
 
 
 
-            XmlWriter writer = XmlWriter.Create(xmlFileName);
+            XmlWriter writer = XmlWriter.Create(Globals.xmlFileName);
 
             writer.WriteStartDocument();
 
@@ -192,7 +191,7 @@ namespace ImportingApplyingModel
 
 
 
-            for (int i = 1; i < rowsSize; i++)
+            for (int i = 1; i < Globals.rowsSize; i++)
 
             {
 
@@ -230,15 +229,15 @@ namespace ImportingApplyingModel
 
         {
 
-            for (int i = 0; i < rowsSize; i++)
+            for (int i = 0; i < Globals.rowsSize; i++)
 
             {
 
-                if (list[i][j] == "Ǝ")
+                if (Globals.list[i][j] == "Ǝ")
 
                 {
 
-                    list[i][j] = defaultValue;
+                    Globals.list[i][j] = defaultValue;
 
                 }
 
@@ -258,17 +257,17 @@ namespace ImportingApplyingModel
 
         {
 
-            for (int i = 0; i < rowsSize; i++)
+            for (int i = 0; i < Globals.rowsSize; i++)
 
             {
 
-                if (list[i][j] == "Ǝ")
+                if (Globals.list[i][j] == "Ǝ")
 
                 {
 
                     getData applyInvalidConstraint = new getData("Null value detected. Please enter a valid value" , "null");
                     applyInvalidConstraint.Show();
-                    list[i][j] = applyInvalidConstraint.getReplacement();
+                    Globals.list[i][j] = applyInvalidConstraint.getReplacement();
                     
                 }
 
@@ -286,20 +285,20 @@ namespace ImportingApplyingModel
 
         {
 
-            for (int i = 0; i < rowsSize; i++)
+            for (int i = 0; i < Globals.rowsSize; i++)
 
             {
 
-                string temp = list[i][j];
+                string temp = Globals.list[i][j];
 
-                for (int ii = i + 1; ii < rowsSize; ii++)
+                for (int ii = i + 1; ii < Globals.rowsSize; ii++)
 
                 {
 
                     if (list[ii][j] == temp)
 
                     {
-
+                        
                         getData applyInvalidConstraint = new getData("Repeated value detected. Please enter a unique value", list[ii][j]);
                         applyInvalidConstraint.Show();
                         list[ii][j] = applyInvalidConstraint.getReplacement();
@@ -326,17 +325,17 @@ namespace ImportingApplyingModel
 
             {
 
-                for (int i = 0; i < rowsSize; i++)
+                for (int i = 0; i < Globals.rowsSize; i++)
 
                 {
 
-                    if (float.Parse(list[i][j]) <= value)
+                    if (float.Parse(Globals.list[i][j]) <= value)
 
                     {
 
-                        getData applyInvalidConstraint = new getData("Value is NOT greater than " + value.ToString() + ". Please enter a valid value.", list[i][j]);
+                        getData applyInvalidConstraint = new getData("Value is NOT greater than " + value.ToString() + ". Please enter a valid value.", Globals.list[i][j]);
                         applyInvalidConstraint.Show();
-                        list[i][j] = applyInvalidConstraint.getReplacement();
+                        Globals.list[i][j] = applyInvalidConstraint.getReplacement();
 
                     }
 
@@ -348,16 +347,16 @@ namespace ImportingApplyingModel
 
             {
 
-                for (int i = 0; i < rowsSize; i++)
+                for (int i = 0; i < Globals.rowsSize; i++)
 
                 {
 
-                    if (list[i][j].Length <= value)
+                    if (Globals.list[i][j].Length <= value)
 
                     {
-                        getData applyInvalidConstraint = new getData("Value length is NOT greater than " + value.ToString() + ". Please enter a valid value.", list[i][j]);
+                        getData applyInvalidConstraint = new getData("Value length is NOT greater than " + value.ToString() + ". Please enter a valid value.", Globals.list[i][j]);
                         applyInvalidConstraint.Show();
-                        list[i][j] = applyInvalidConstraint.getReplacement();
+                        Globals.list[i][j] = applyInvalidConstraint.getReplacement();
                     }
 
                 }
@@ -380,16 +379,16 @@ namespace ImportingApplyingModel
 
             {
 
-                for (int i = 0; i < rowsSize; i++)
+                for (int i = 0; i < Globals.rowsSize; i++)
 
                 {
 
-                    if (float.Parse(list[i][j]) < value)
+                    if (float.Parse(Globals.list[i][j]) < value)
 
                     {
-                        getData applyInvalidConstraint = new getData("Value is NOT greater than NOR equal " + value.ToString() + ". Please enter a valid value.", list[i][j]);
+                        getData applyInvalidConstraint = new getData("Value is NOT greater than NOR equal " + value.ToString() + ". Please enter a valid value.", Globals.list[i][j]);
                         applyInvalidConstraint.Show();
-                        list[i][j] = applyInvalidConstraint.getReplacement();
+                        Globals.list[i][j] = applyInvalidConstraint.getReplacement();
                     }
 
                 }
@@ -400,17 +399,17 @@ namespace ImportingApplyingModel
 
             {
 
-                for (int i = 0; i < rowsSize; i++)
+                for (int i = 0; i < Globals.rowsSize; i++)
 
                 {
 
-                    if (list[i][j].Length < value)
+                    if (Globals.list[i][j].Length < value)
 
                     {
 
-                        getData applyInvalidConstraint = new getData("Value length is NOT greater than NOR equal " + value.ToString() + ". Please enter a valid value.", list[i][j]);
+                        getData applyInvalidConstraint = new getData("Value length is NOT greater than NOR equal " + value.ToString() + ". Please enter a valid value.", Globals.list[i][j]);
                         applyInvalidConstraint.Show();
-                        list[i][j] = applyInvalidConstraint.getReplacement();
+                        Globals.list[i][j] = applyInvalidConstraint.getReplacement();
 
                     }
 
@@ -434,16 +433,16 @@ namespace ImportingApplyingModel
 
             {
 
-                for (int i = 0; i < rowsSize; i++)
+                for (int i = 0; i < Globals.rowsSize; i++)
 
                 {
 
-                    if (float.Parse(list[i][j]) >= value)
+                    if (float.Parse(Globals.list[i][j]) >= value)
 
                     {
-                        getData applyInvalidConstraint = new getData("Value is NOT less than " + value.ToString() + ". Please enter a valid value.", list[i][j]);
+                        getData applyInvalidConstraint = new getData("Value is NOT less than " + value.ToString() + ". Please enter a valid value.", Globals.list[i][j]);
                         applyInvalidConstraint.Show();
-                        list[i][j] = applyInvalidConstraint.getReplacement();
+                        Globals.list[i][j] = applyInvalidConstraint.getReplacement();
                     }
 
                 }
@@ -454,17 +453,17 @@ namespace ImportingApplyingModel
 
             {
 
-                for (int i = 0; i < rowsSize; i++)
+                for (int i = 0; i < Globals.rowsSize; i++)
 
                 {
 
-                    if (list[i][j].Length >= value)
+                    if (Globals.list[i][j].Length >= value)
 
                     {
 
-                        getData applyInvalidConstraint = new getData("Value length is NOT less than " + value.ToString() + ". Please enter a valid value.", list[i][j]);
+                        getData applyInvalidConstraint = new getData("Value length is NOT less than " + value.ToString() + ". Please enter a valid value.", Globals.list[i][j]);
                         applyInvalidConstraint.Show();
-                        list[i][j] = applyInvalidConstraint.getReplacement();
+                        Globals.list[i][j] = applyInvalidConstraint.getReplacement();
 
                     }
 
@@ -488,16 +487,16 @@ namespace ImportingApplyingModel
 
             {
 
-                for (int i = 0; i < rowsSize; i++)
+                for (int i = 0; i < Globals.rowsSize; i++)
 
                 {
 
-                    if (float.Parse(list[i][j]) > value)
+                    if (float.Parse(Globals.list[i][j]) > value)
 
                     {
-                        getData applyInvalidConstraint = new getData("Value is NOT less than NOR equal " + value.ToString() + ". Please enter a valid value.", list[i][j]);
+                        getData applyInvalidConstraint = new getData("Value is NOT less than NOR equal " + value.ToString() + ". Please enter a valid value.", Globals.list[i][j]);
                         applyInvalidConstraint.Show();
-                        list[i][j] = applyInvalidConstraint.getReplacement();
+                        Globals.list[i][j] = applyInvalidConstraint.getReplacement();
                     }
 
                 }
@@ -508,16 +507,16 @@ namespace ImportingApplyingModel
 
             {
 
-                for (int i = 0; i < rowsSize; i++)
+                for (int i = 0; i < Globals.rowsSize; i++)
 
                 {
 
-                    if (list[i][j].Length > value)
+                    if (Globals.list[i][j].Length > value)
 
                     {
-                        getData applyInvalidConstraint = new getData("Value length is NOT less than NOR equal " + value.ToString() + ". Please enter a valid value.", list[i][j]);
+                        getData applyInvalidConstraint = new getData("Value length is NOT less than NOR equal " + value.ToString() + ". Please enter a valid value.", Globals.list[i][j]);
                         applyInvalidConstraint.Show();
-                        list[i][j] = applyInvalidConstraint.getReplacement();
+                        Globals.list[i][j] = applyInvalidConstraint.getReplacement();
                     }
 
                 }
@@ -540,15 +539,15 @@ namespace ImportingApplyingModel
 
             {
 
-                for (int i = 0; i < rowsSize; i++)
+                for (int i = 0; i < Globals.rowsSize; i++)
 
                 {
 
-                    if (float.Parse(list[i][j]) != value)
+                    if (float.Parse(Globals.list[i][j]) != value)
 
                     {
-                        list[i][j] = value.ToString();
-                        MessageBox.Show("Invalid Number", "The value is NOT equal " + value.ToString() + ". The value was automatically set to the given constraint.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        Globals.list[i][j] = value.ToString();
+                        MessageBox.Show("The value is NOT equal " + value.ToString() + ". The value was automatically set to the given constraint.", "Invalid Number", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
 
@@ -560,17 +559,17 @@ namespace ImportingApplyingModel
 
             {
 
-                for (int i = 0; i < rowsSize; i++)
+                for (int i = 0; i < Globals.rowsSize; i++)
 
                 {
 
-                    if (list[i][j].Length != value)
+                    if (Globals.list[i][j].Length != value)
 
                     {
 
-                        getData applyInvalidConstraint = new getData("Value length is NOT equal " + value.ToString() + ". Please enter a valid value.", list[i][j]);
+                        getData applyInvalidConstraint = new getData("Value length is NOT equal " + value.ToString() + ". Please enter a valid value.", Globals.list[i][j]);
                         applyInvalidConstraint.Show();
-                        list[i][j] = applyInvalidConstraint.getReplacement();
+                        Globals.list[i][j] = applyInvalidConstraint.getReplacement();
 
                     }
 
@@ -594,17 +593,17 @@ namespace ImportingApplyingModel
 
             {
 
-                for (int i = 0; i < rowsSize; i++)
+                for (int i = 0; i < Globals.rowsSize; i++)
 
                 {
 
-                    if (float.Parse(list[i][j]) == value)
+                    if (float.Parse(Globals.list[i][j]) == value)
 
                     {
 
-                        getData applyInvalidConstraint = new getData("Value is equal to " + value.ToString() + ". Please enter a valid value.", list[i][j]);
+                        getData applyInvalidConstraint = new getData("Value is equal to " + value.ToString() + ". Please enter a valid value.", Globals.list[i][j]);
                         applyInvalidConstraint.Show();
-                        list[i][j] = applyInvalidConstraint.getReplacement();
+                        Globals.list[i][j] = applyInvalidConstraint.getReplacement();
 
                     }
 
@@ -616,16 +615,16 @@ namespace ImportingApplyingModel
 
             {
 
-                for (int i = 0; i < rowsSize; i++)
+                for (int i = 0; i < Globals.rowsSize; i++)
 
                 {
 
-                    if (list[i][j].Length == value)
+                    if (Globals.list[i][j].Length == value)
 
                     {
-                        getData applyInvalidConstraint = new getData("Value length is equal to " + value.ToString() + ". Please enter a valid value.", list[i][j]);
+                        getData applyInvalidConstraint = new getData("Value length is equal to " + value.ToString() + ". Please enter a valid value.", Globals.list[i][j]);
                         applyInvalidConstraint.Show();
-                        list[i][j] = applyInvalidConstraint.getReplacement();
+                        Globals.list[i][j] = applyInvalidConstraint.getReplacement();
                     }
 
                 }
