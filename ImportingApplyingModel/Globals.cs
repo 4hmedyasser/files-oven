@@ -120,7 +120,7 @@ namespace ImportingApplyingModel
 
             }
 
-                Globals.rowsSize = Globals.list[0].Count-1;
+                Globals.rowsSize = Globals.list[0].Count;
 
 
 

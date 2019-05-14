@@ -40,9 +40,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ISNULL = new System.Windows.Forms.CheckBox();
             this.APPLYBEFOREOK = new System.Windows.Forms.Button();
-            this.RETURNFROMEDITCOLUMNTOHOMEPAGE = new System.Windows.Forms.Button();
             this.OKANDCHOOSEANOTHERCOLUMN = new System.Windows.Forms.Button();
             this.caution = new System.Windows.Forms.Label();
+            this.WRITEANDGOHOME = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NUMERICALY
@@ -170,7 +170,7 @@
             // 
             // APPLYBEFOREOK
             // 
-            this.APPLYBEFOREOK.Location = new System.Drawing.Point(391, 407);
+            this.APPLYBEFOREOK.Location = new System.Drawing.Point(98, 407);
             this.APPLYBEFOREOK.Margin = new System.Windows.Forms.Padding(2);
             this.APPLYBEFOREOK.Name = "APPLYBEFOREOK";
             this.APPLYBEFOREOK.Size = new System.Drawing.Size(139, 46);
@@ -179,20 +179,9 @@
             this.APPLYBEFOREOK.UseVisualStyleBackColor = true;
             this.APPLYBEFOREOK.Click += new System.EventHandler(this.APPLYBEFOREOK_Click);
             // 
-            // RETURNFROMEDITCOLUMNTOHOMEPAGE
-            // 
-            this.RETURNFROMEDITCOLUMNTOHOMEPAGE.Location = new System.Drawing.Point(67, 407);
-            this.RETURNFROMEDITCOLUMNTOHOMEPAGE.Margin = new System.Windows.Forms.Padding(2);
-            this.RETURNFROMEDITCOLUMNTOHOMEPAGE.Name = "RETURNFROMEDITCOLUMNTOHOMEPAGE";
-            this.RETURNFROMEDITCOLUMNTOHOMEPAGE.Size = new System.Drawing.Size(139, 46);
-            this.RETURNFROMEDITCOLUMNTOHOMEPAGE.TabIndex = 92;
-            this.RETURNFROMEDITCOLUMNTOHOMEPAGE.Text = "Home";
-            this.RETURNFROMEDITCOLUMNTOHOMEPAGE.UseVisualStyleBackColor = true;
-            this.RETURNFROMEDITCOLUMNTOHOMEPAGE.Click += new System.EventHandler(this.RETURNFROMEDITCOLUMNTOHOMEPAGE_Click);
-            // 
             // OKANDCHOOSEANOTHERCOLUMN
             // 
-            this.OKANDCHOOSEANOTHERCOLUMN.Location = new System.Drawing.Point(707, 407);
+            this.OKANDCHOOSEANOTHERCOLUMN.Location = new System.Drawing.Point(379, 407);
             this.OKANDCHOOSEANOTHERCOLUMN.Name = "OKANDCHOOSEANOTHERCOLUMN";
             this.OKANDCHOOSEANOTHERCOLUMN.Size = new System.Drawing.Size(139, 46);
             this.OKANDCHOOSEANOTHERCOLUMN.TabIndex = 106;
@@ -211,11 +200,22 @@
             this.caution.Text = "Caution: In order to write the XML file successfully please keep pressing the App" +
     "ly button until you do not get any errors.";
             // 
+            // WRITEANDGOHOME
+            // 
+            this.WRITEANDGOHOME.Location = new System.Drawing.Point(665, 407);
+            this.WRITEANDGOHOME.Name = "WRITEANDGOHOME";
+            this.WRITEANDGOHOME.Size = new System.Drawing.Size(139, 46);
+            this.WRITEANDGOHOME.TabIndex = 108;
+            this.WRITEANDGOHOME.Text = "Write";
+            this.WRITEANDGOHOME.UseVisualStyleBackColor = true;
+            this.WRITEANDGOHOME.Click += new System.EventHandler(this.WRITEANDGOHOME_Click);
+            // 
             // EDITCOLUMN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(902, 476);
+            this.Controls.Add(this.WRITEANDGOHOME);
             this.Controls.Add(this.caution);
             this.Controls.Add(this.OKANDCHOOSEANOTHERCOLUMN);
             this.Controls.Add(this.NUMERICALY);
@@ -230,7 +230,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ISNULL);
             this.Controls.Add(this.APPLYBEFOREOK);
-            this.Controls.Add(this.RETURNFROMEDITCOLUMNTOHOMEPAGE);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EDITCOLUMN";
             this.Text = "Edit Column";
@@ -254,8 +253,8 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.CheckBox ISNULL;
         public System.Windows.Forms.Button APPLYBEFOREOK;
-        public System.Windows.Forms.Button RETURNFROMEDITCOLUMNTOHOMEPAGE;
         private System.Windows.Forms.Button OKANDCHOOSEANOTHERCOLUMN;
         private System.Windows.Forms.Label caution;
+        private System.Windows.Forms.Button WRITEANDGOHOME;
     }
 }

@@ -22,8 +22,9 @@ namespace ImportingApplyingModel
             SELECTCONDITION.SelectedIndex = 0;
         }
 
-        private void RETURNFROMEDITCOLUMNTOHOMEPAGE_Click(object sender, EventArgs e)
+        private void WRITEANDGOHOME_Click(object sender, EventArgs e)
         {
+            Globals.setXML();
             IMPORTINGDATA openForm1 = new IMPORTINGDATA();
             openForm1.Show();
             this.Hide();
@@ -31,7 +32,6 @@ namespace ImportingApplyingModel
 
         private void OKANDCHOOSEANOTHERCOLUMN_Click(object sender, EventArgs e)
         {
-            Globals.setXML();
             THEORDEROFTHECOLUMN openForm2 = new THEORDEROFTHECOLUMN();
             openForm2.Show();
             this.Hide();
@@ -122,6 +122,9 @@ namespace ImportingApplyingModel
                     }  //  numbers
                 }  //  no errors
             }  //  =!=>>=<<=
-        }
+        }  //  clicked
+
+
+
     }
 }
