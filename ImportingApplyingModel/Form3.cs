@@ -29,7 +29,15 @@ namespace ImportingApplyingModel
             this.Hide();
         }
 
-        private void RETURNTOSELECTANOTHERCOLUMNORDER_Click(object sender, EventArgs e)
+        private void OKANDCHOOSEANOTHERCOLUMN_Click(object sender, EventArgs e)
+        {
+            Globals.setXML();
+            THEORDEROFTHECOLUMN openForm2 = new THEORDEROFTHECOLUMN();
+            openForm2.Show();
+            this.Hide();
+        }
+
+        private void APPLYBEFOREOK_Click(object sender, EventArgs e)
         {
             if (HASDEFAULTVALUE.Checked)
             {
@@ -52,7 +60,7 @@ namespace ImportingApplyingModel
             }
             if (HASCERTAINCONDITION.Checked)
             {
-                if( (!LITERALY.Checked && !NUMERICALY.Checked) || string.IsNullOrEmpty(SELECTEDCONDITIONVALUE.Text) )
+                if ((!LITERALY.Checked && !NUMERICALY.Checked) || string.IsNullOrEmpty(SELECTEDCONDITIONVALUE.Text))
                 {
                     MessageBox.Show("Please select weather you will apply the constraints on words or numbers.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -114,14 +122,6 @@ namespace ImportingApplyingModel
                     }  //  numbers
                 }  //  no errors
             }  //  =!=>>=<<=
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Globals.setXML();
-            THEORDEROFTHECOLUMN openForm2 = new THEORDEROFTHECOLUMN();
-            openForm2.Show();
-            this.Hide();
         }
     }
 }

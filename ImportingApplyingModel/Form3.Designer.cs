@@ -39,9 +39,9 @@
             this.HASDEFAULTVALUE = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.ISNULL = new System.Windows.Forms.CheckBox();
-            this.RETURNTOSELECTANOTHERCOLUMNORDER = new System.Windows.Forms.Button();
+            this.APPLYBEFOREOK = new System.Windows.Forms.Button();
             this.RETURNFROMEDITCOLUMNTOHOMEPAGE = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.OKANDCHOOSEANOTHERCOLUMN = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NUMERICALY
@@ -167,16 +167,16 @@
             this.ISNULL.Text = "No Null Values";
             this.ISNULL.UseVisualStyleBackColor = true;
             // 
-            // RETURNTOSELECTANOTHERCOLUMNORDER
+            // APPLYBEFOREOK
             // 
-            this.RETURNTOSELECTANOTHERCOLUMNORDER.Location = new System.Drawing.Point(391, 407);
-            this.RETURNTOSELECTANOTHERCOLUMNORDER.Margin = new System.Windows.Forms.Padding(2);
-            this.RETURNTOSELECTANOTHERCOLUMNORDER.Name = "RETURNTOSELECTANOTHERCOLUMNORDER";
-            this.RETURNTOSELECTANOTHERCOLUMNORDER.Size = new System.Drawing.Size(139, 46);
-            this.RETURNTOSELECTANOTHERCOLUMNORDER.TabIndex = 93;
-            this.RETURNTOSELECTANOTHERCOLUMNORDER.Text = "Apply";
-            this.RETURNTOSELECTANOTHERCOLUMNORDER.UseVisualStyleBackColor = true;
-            this.RETURNTOSELECTANOTHERCOLUMNORDER.Click += new System.EventHandler(this.RETURNTOSELECTANOTHERCOLUMNORDER_Click);
+            this.APPLYBEFOREOK.Location = new System.Drawing.Point(391, 407);
+            this.APPLYBEFOREOK.Margin = new System.Windows.Forms.Padding(2);
+            this.APPLYBEFOREOK.Name = "APPLYBEFOREOK";
+            this.APPLYBEFOREOK.Size = new System.Drawing.Size(139, 46);
+            this.APPLYBEFOREOK.TabIndex = 93;
+            this.APPLYBEFOREOK.Text = "Apply";
+            this.APPLYBEFOREOK.UseVisualStyleBackColor = true;
+            this.APPLYBEFOREOK.Click += new System.EventHandler(this.APPLYBEFOREOK_Click);
             // 
             // RETURNFROMEDITCOLUMNTOHOMEPAGE
             // 
@@ -189,22 +189,22 @@
             this.RETURNFROMEDITCOLUMNTOHOMEPAGE.UseVisualStyleBackColor = true;
             this.RETURNFROMEDITCOLUMNTOHOMEPAGE.Click += new System.EventHandler(this.RETURNFROMEDITCOLUMNTOHOMEPAGE_Click);
             // 
-            // button1
+            // OKANDCHOOSEANOTHERCOLUMN
             // 
-            this.button1.Location = new System.Drawing.Point(707, 407);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 46);
-            this.button1.TabIndex = 106;
-            this.button1.Text = "Ok";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.OKANDCHOOSEANOTHERCOLUMN.Location = new System.Drawing.Point(707, 407);
+            this.OKANDCHOOSEANOTHERCOLUMN.Name = "OKANDCHOOSEANOTHERCOLUMN";
+            this.OKANDCHOOSEANOTHERCOLUMN.Size = new System.Drawing.Size(139, 46);
+            this.OKANDCHOOSEANOTHERCOLUMN.TabIndex = 106;
+            this.OKANDCHOOSEANOTHERCOLUMN.Text = "OK";
+            this.OKANDCHOOSEANOTHERCOLUMN.UseVisualStyleBackColor = true;
+            this.OKANDCHOOSEANOTHERCOLUMN.Click += new System.EventHandler(this.OKANDCHOOSEANOTHERCOLUMN_Click);
             // 
             // EDITCOLUMN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(902, 476);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.OKANDCHOOSEANOTHERCOLUMN);
             this.Controls.Add(this.NUMERICALY);
             this.Controls.Add(this.LITERALY);
             this.Controls.Add(this.HASCERTAINCONDITION);
@@ -216,7 +216,7 @@
             this.Controls.Add(this.HASDEFAULTVALUE);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ISNULL);
-            this.Controls.Add(this.RETURNTOSELECTANOTHERCOLUMNORDER);
+            this.Controls.Add(this.APPLYBEFOREOK);
             this.Controls.Add(this.RETURNFROMEDITCOLUMNTOHOMEPAGE);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EDITCOLUMN";
@@ -240,8 +240,8 @@
         public System.Windows.Forms.CheckBox HASDEFAULTVALUE;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.CheckBox ISNULL;
-        public System.Windows.Forms.Button RETURNTOSELECTANOTHERCOLUMNORDER;
+        public System.Windows.Forms.Button APPLYBEFOREOK;
         public System.Windows.Forms.Button RETURNFROMEDITCOLUMNTOHOMEPAGE;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button OKANDCHOOSEANOTHERCOLUMN;
     }
 }
