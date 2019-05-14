@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -55,8 +56,7 @@ namespace ImportingApplyingModel
                 string strfilename = OpenFileDialog1.FileName;
                 TEXTFILEPATH.Text = strfilename;
                 Globals.txtFileName = strfilename;
-                Globals.exportCount++;
-                Globals.xmlFileName = "Exported XML file " + Globals.exportCount.ToString() + ".xml";
+                Globals.xmlFileName = Path.GetFileNameWithoutExtension(strfilename) + ".xml";
                 Globals.getText();
             
             }
@@ -71,8 +71,7 @@ namespace ImportingApplyingModel
                 string strfilename1 = OpenFileDialog2.FileName;
                 EXCELFILEPATH.Text = strfilename1;
                 Globals.xlsxFileName = strfilename1;
-                Globals.exportCount++;
-                Globals.xmlFileName = "Exported XML file " + Globals.exportCount.ToString() + ".xml";
+                Globals.xmlFileName = Path.GetFileNameWithoutExtension(strfilename1) + ".xml";
                 Globals.getExcel();
               }
         }

@@ -34,8 +34,6 @@ namespace ImportingApplyingModel
 
         public static List<List<String>> list =  new List<List<string>>();
 
-        public static int exportCount = 0;
-
         public static int rowsSize;
 
         public static int selectedColumn;
@@ -197,13 +195,13 @@ namespace ImportingApplyingModel
 
                 writer.WriteStartElement("Row" + i);
 
-                for (int j = 0; j < list.ElementAt(0).Count; j++)
+                for (int j = 0; j < Globals.list.ElementAt(0).Count; j++)
 
                 {
 
-                    writer.WriteStartElement(list.ElementAt(0).ElementAt(j));
+                    writer.WriteStartElement(Globals.list.ElementAt(0).ElementAt(j));
 
-                    writer.WriteString(list.ElementAt(i).ElementAt(j));
+                    writer.WriteString(Globals.list.ElementAt(i).ElementAt(j));
 
                     writer.WriteEndElement();
 
