@@ -62,9 +62,9 @@
             this.label1.Location = new System.Drawing.Point(125, 62);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(713, 31);
+            this.label1.Size = new System.Drawing.Size(624, 31);
             this.label1.TabIndex = 25;
-            this.label1.Text = "Enter the order of column you want to apply constraints on";
+            this.label1.Text = "Select the column you want to apply constraints on";
             // 
             // RETURNTOFIRSTPAGE
             // 
