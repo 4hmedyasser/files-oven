@@ -31,8 +31,9 @@ namespace ImportingApplyingModel
             }
             else
             {
-                if (string.IsNullOrEmpty(ROWDELIMITER.Text) && string.IsNullOrEmpty(COLUMNDELIMITER.Text))
+                if (string.IsNullOrEmpty(ROWDELIMITER.Text) && string.IsNullOrEmpty(COLUMNDELIMITER.Text) && string.IsNullOrEmpty(TEXTFILEPATH.Text))
                 {
+                    Globals.getExcel();
                     THEORDEROFTHECOLUMN Openform = new THEORDEROFTHECOLUMN();
                     Openform.Show();
                     this.Visible = false;
@@ -60,6 +61,10 @@ namespace ImportingApplyingModel
                             Globals.rowDelimiter = ROWDELIMITER.Text[0];
                             Globals.columDelimiter = COLUMNDELIMITER.Text[0];
                         }
+                        Globals.getText();
+                        Console.WriteLine(Globals.rowDelimiter);
+                        Console.WriteLine(Globals.columDelimiter);
+                        
                         THEORDEROFTHECOLUMN Openform = new THEORDEROFTHECOLUMN();
                         Openform.Show();
                         this.Visible = false;
@@ -77,8 +82,7 @@ namespace ImportingApplyingModel
                 TEXTFILEPATH.Text = strfilename;
                 Globals.txtFileName = strfilename;
                 Globals.xmlFileName = Path.GetFileNameWithoutExtension(strfilename) + ".xml";
-                Globals.getText();
-                
+
             }
         }
 
@@ -92,7 +96,6 @@ namespace ImportingApplyingModel
                 EXCELFILEPATH.Text = strfilename1;
                 Globals.xlsxFileName = strfilename1;
                 Globals.xmlFileName = Path.GetFileNameWithoutExtension(strfilename1) + ".xml";
-                Globals.getExcel();
 
             }
         }
