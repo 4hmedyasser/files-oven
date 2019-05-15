@@ -39,11 +39,31 @@ namespace ImportingApplyingModel
                 }
                 else
                 {
-                    Globals.rowDelimiter = ROWDELIMITER.Text[0];
-                    Globals.columDelimiter = COLUMNDELIMITER.Text[0];
-                    THEORDEROFTHECOLUMN Openform = new THEORDEROFTHECOLUMN();
-                    Openform.Show();
-                    this.Visible = false;
+                    if(ROWDELIMITER.Text == ROWDELIMITER.Text)
+                    {
+                        MessageBox.Show("Row delimiter can't be the same as the column delimiter. Please edit the text file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        if (ROWDELIMITER.Text == "\n")
+                        {
+                            Globals.rowDelimiter = '\n';
+                            Globals.columDelimiter = COLUMNDELIMITER.Text[0];
+                        }
+                        else if (COLUMNDELIMITER.Text == "\n")
+                        {
+                            Globals.rowDelimiter = ROWDELIMITER.Text[0];
+                            Globals.columDelimiter = '\n';
+                        }
+                        else
+                        {
+                            Globals.rowDelimiter = ROWDELIMITER.Text[0];
+                            Globals.columDelimiter = COLUMNDELIMITER.Text[0];
+                        }
+                        THEORDEROFTHECOLUMN Openform = new THEORDEROFTHECOLUMN();
+                        Openform.Show();
+                        this.Visible = false;
+                    }
                 }
             }
         }
