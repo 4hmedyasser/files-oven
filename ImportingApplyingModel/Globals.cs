@@ -44,13 +44,13 @@ namespace ImportingApplyingModel
 
         {
 
-            for (int i = 0; i < Data.Length - 1; i++)
+            for (int i = 0; i < Globals.Data.Length - 1; i++)
 
             {
 
-                if (Data[i] == columDelimiter && Data[i + 1] == columDelimiter)
+                if (Globals.Data[i] == Globals.columDelimiter && Globals.Data[i + 1] == Globals.columDelimiter)
 
-                    Data.Insert(i + 1, "Ǝ");
+                    Globals.Data.Insert(i + 1, "Ǝ");
 
             }
 
@@ -132,12 +132,12 @@ namespace ImportingApplyingModel
 
 
 
-            Data = File.ReadAllText(txtFileName);
+            Globals.Data = File.ReadAllText(txtFileName);
 
-            records = Data.Split(rowDelimiter);
+            Globals.records = Globals.Data.Split(rowDelimiter);
 
 
-            foreach (string record in records)
+            foreach (string record in Globals.records)
 
             {
 
@@ -168,10 +168,14 @@ namespace ImportingApplyingModel
 
 
             if (rowDelimiter == '\n')
-
+            {
                 Globals.rowsSize = Globals.list.ElementAt(0).Count - 1;
+            }
 
-
+            else
+            {
+                Globals.rowsSize = Globals.list.ElementAt(0).Count;
+            }
 
         }
         //////////////////////////////////////////////////////////////////////////////
@@ -323,7 +327,7 @@ namespace ImportingApplyingModel
 
             {
 
-                for (int i = 0; i < Globals.rowsSize; i++)
+                for (int i = 1; i < Globals.rowsSize; i++)
 
                 {
 
@@ -345,7 +349,7 @@ namespace ImportingApplyingModel
 
             {
 
-                for (int i = 0; i < Globals.rowsSize; i++)
+                for (int i = 1; i < Globals.rowsSize; i++)
 
                 {
 
@@ -377,7 +381,7 @@ namespace ImportingApplyingModel
 
             {
 
-                for (int i = 0; i < Globals.rowsSize; i++)
+                for (int i = 1; i < Globals.rowsSize; i++)
 
                 {
 
@@ -397,7 +401,7 @@ namespace ImportingApplyingModel
 
             {
 
-                for (int i = 0; i < Globals.rowsSize; i++)
+                for (int i = 1; i < Globals.rowsSize; i++)
 
                 {
 
@@ -431,7 +435,7 @@ namespace ImportingApplyingModel
 
             {
 
-                for (int i = 0; i < Globals.rowsSize; i++)
+                for (int i = 1; i < Globals.rowsSize; i++)
 
                 {
 
@@ -451,7 +455,7 @@ namespace ImportingApplyingModel
 
             {
 
-                for (int i = 0; i < Globals.rowsSize; i++)
+                for (int i = 1; i < Globals.rowsSize; i++)
 
                 {
 
@@ -485,7 +489,7 @@ namespace ImportingApplyingModel
 
             {
 
-                for (int i = 0; i < Globals.rowsSize; i++)
+                for (int i = 1; i < Globals.rowsSize; i++)
 
                 {
 
@@ -505,7 +509,7 @@ namespace ImportingApplyingModel
 
             {
 
-                for (int i = 0; i < Globals.rowsSize; i++)
+                for (int i = 1; i < Globals.rowsSize; i++)
 
                 {
 
@@ -537,7 +541,7 @@ namespace ImportingApplyingModel
 
             {
 
-                for (int i = 0; i < Globals.rowsSize; i++)
+                for (int i = 1; i < Globals.rowsSize; i++)
 
                 {
 
@@ -557,7 +561,7 @@ namespace ImportingApplyingModel
 
             {
 
-                for (int i = 0; i < Globals.rowsSize; i++)
+                for (int i = 1; i < Globals.rowsSize; i++)
 
                 {
 
@@ -591,7 +595,7 @@ namespace ImportingApplyingModel
 
             {
 
-                for (int i = 0; i < Globals.rowsSize; i++)
+                for (int i = 1; i < Globals.rowsSize; i++)
 
                 {
 
@@ -613,7 +617,7 @@ namespace ImportingApplyingModel
 
             {
 
-                for (int i = 0; i < Globals.rowsSize; i++)
+                for (int i = 1; i < Globals.rowsSize; i++)
 
                 {
 
