@@ -28,11 +28,7 @@ namespace ImportingApplyingModel
 
         public static char columDelimiter;
 
-        public static string Data;
-
-        public static string[] records;
-
-        public static List<List<String>> list =  new List<List<string>>();
+        public static List<List<String>> list;
 
         public static int rowsSize;
 
@@ -40,22 +36,6 @@ namespace ImportingApplyingModel
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
-        public static void Null()
-
-        {
-
-            for (int i = 0; i < Globals.Data.Length - 1; i++)
-
-            {
-
-                if (Globals.Data[i] == Globals.columDelimiter && Globals.Data[i + 1] == Globals.columDelimiter)
-
-                    Globals.Data.Insert(i + 1, "Ǝ");
-
-            }
-
-        }
-        //////////////////////////////////////////////////////////////////////////////
         public static void getExcel()
 
         {
@@ -63,14 +43,12 @@ namespace ImportingApplyingModel
             SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
             ExcelFile workbook = ExcelFile.Load(xlsxFileName);
-
             ExcelWorksheet worksheet = workbook.Worksheets.ActiveWorksheet;
-
-
-
+            
             CellRange range = worksheet.GetUsedCellRange(true);
 
 
+            Globals.list = new List<List<string>>();
 
             for (int r = range.FirstRowIndex; r <= range.LastRowIndex; r++)
 
@@ -126,104 +104,76 @@ namespace ImportingApplyingModel
 
         }
         //////////////////////////////////////////////////////////////////////////////
-        public static void getText()
 
+
+        public static void getText()
         {
 
+            String Data = File.ReadAllText(Globals.txtFileName);
+            String[] records = Data.Split(Globals.rowDelimiter);
+            Globals.list = new List<List<String>>();
 
-
-            Globals.Data = File.ReadAllText(txtFileName);
-
-            Globals.records = Globals.Data.Split(rowDelimiter);
-
-
-            foreach (string record in Globals.records)
-
+            foreach (String record in records)
             {
-
-                string[] fields = record.Split(columDelimiter);
-
+                String[] fields = record.Split(Globals.columDelimiter);
                 List<String> temp = new List<String>();
 
-
-
-                foreach (string field in fields)
-
+                foreach (String field in fields)
                 {
-
                     temp.Add(field);
-
                 }
-
-
 
                 Globals.list.Add(temp);
 
             }
 
 
+            for (int i = 0; i < Data.Length - 1; i++)
+            {
+                if (Data[i] == Globals.columDelimiter && Data[i + 1] == Globals.columDelimiter)
+                    Data.Insert(i + 1, "Ǝ");
+            }
 
-            Null();
-
-
+            for (int i = 0; i < Data.Length - 1; i++)
+            {
+                if (Data[i] == Globals.columDelimiter && Data[i + 1] == Globals.columDelimiter)
+                    Data.Insert(i + 1, "Ǝ");
+            }
 
             if (rowDelimiter == '\n')
             {
                 Globals.rowsSize = Globals.list.Count - 1;
             }
-
             else
             {
                 Globals.rowsSize = Globals.list.Count;
             }
 
         }
-        //////////////////////////////////////////////////////////////////////////////
+
         public static void setXML()
 
         {
 
-
-
             XmlWriter writer = XmlWriter.Create(Globals.xmlFileName);
-
             writer.WriteStartDocument();
-
             writer.WriteStartElement("Table");
 
-
-
             for (int i = 1; i < Globals.rowsSize; i++)
-
             {
-
                 writer.WriteStartElement("Row" + i);
-
                 for (int j = 0; j < Globals.list.ElementAt(0).Count; j++)
-
                 {
-
                     writer.WriteStartElement(Globals.list.ElementAt(0).ElementAt(j));
-
                     writer.WriteString(Globals.list.ElementAt(i).ElementAt(j));
-
                     writer.WriteEndElement();
-
                 }
-
                 writer.WriteEndElement();
-
             }
 
-
-
             writer.WriteEndElement();
-
             writer.WriteEndDocument();
-
             writer.Close();
-
-
 
         }
         //////////////////////////////////////////////////////////////////////////////
