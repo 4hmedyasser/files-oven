@@ -39,7 +39,7 @@ namespace ImportingApplyingModel
                 }
                 else
                 {
-                    if(ROWDELIMITER.Text == ROWDELIMITER.Text)
+                    if(ROWDELIMITER.Text == COLUMNDELIMITER.Text)
                     {
                         MessageBox.Show("Row delimiter can't be the same as the column delimiter. Please edit the text file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
