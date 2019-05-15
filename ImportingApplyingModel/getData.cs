@@ -14,11 +14,14 @@ namespace ImportingApplyingModel
     {
         String viewMessage;
         String originalValue;
-        public static String Replacement;
-        public getData(String viewMessage , String originalValue)
+        int i, j;
+
+        public getData(String viewMessage , String originalValue , int i, int j)
         {
             this.viewMessage = viewMessage;
             this.originalValue = originalValue;
+            this.i = i;
+            this.j = j;
             InitializeComponent();
         }
 
@@ -36,14 +39,9 @@ namespace ImportingApplyingModel
             }
             else
             {
-                Replacement = AlternativeValue.Text;
+                Globals.list[i][j] = AlternativeValue.Text;
                 this.Hide();
             }
-        }
-
-        public string getReplacement()
-        {
-            return Replacement;
         }
     }
 }
