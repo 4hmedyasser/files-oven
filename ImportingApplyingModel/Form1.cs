@@ -34,6 +34,7 @@ namespace ImportingApplyingModel
                 if (string.IsNullOrEmpty(ROWDELIMITER.Text) && string.IsNullOrEmpty(COLUMNDELIMITER.Text) && string.IsNullOrEmpty(TEXTFILEPATH.Text))
                 {
                     Globals.getExcel();
+
                     THEORDEROFTHECOLUMN Openform = new THEORDEROFTHECOLUMN();
                     Openform.Show();
                     this.Visible = false;
@@ -61,9 +62,9 @@ namespace ImportingApplyingModel
                             Globals.rowDelimiter = ROWDELIMITER.Text[0];
                             Globals.columDelimiter = COLUMNDELIMITER.Text[0];
                         }
+
+
                         Globals.getText();
-                        Console.WriteLine(Globals.rowDelimiter);
-                        Console.WriteLine(Globals.columDelimiter);
                         
                         THEORDEROFTHECOLUMN Openform = new THEORDEROFTHECOLUMN();
                         Openform.Show();
@@ -88,7 +89,7 @@ namespace ImportingApplyingModel
 
         private void BROWSEEXCELFILE_Click(object sender, EventArgs e)
         {
-              OpenFileDialog OpenFileDialog2 = new OpenFileDialog();
+            OpenFileDialog OpenFileDialog2 = new OpenFileDialog();
             if (OpenFileDialog2.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
 
