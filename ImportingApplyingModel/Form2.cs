@@ -32,7 +32,6 @@ namespace ImportingApplyingModel
         private void CONFIRMTOGOTOEDITFORM_Click(object sender, EventArgs e)
         {
             Globals.selectedColumn = CHOOSECOLUMN.SelectedIndex;
-            Console.WriteLine(CHOOSECOLUMN.SelectedIndex);
             EDITCOLUMN openeditform = new EDITCOLUMN();
             openeditform.Show();
             this.Visible = false;

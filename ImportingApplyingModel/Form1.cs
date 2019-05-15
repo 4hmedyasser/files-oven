@@ -58,22 +58,23 @@ namespace ImportingApplyingModel
                 Globals.txtFileName = strfilename;
                 Globals.xmlFileName = Path.GetFileNameWithoutExtension(strfilename) + ".xml";
                 Globals.getText();
-            
+                
             }
         }
 
         private void BROWSEEXCELFILE_Click(object sender, EventArgs e)
         {
               OpenFileDialog OpenFileDialog2 = new OpenFileDialog();
-              if (OpenFileDialog2.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-              {
+            if (OpenFileDialog2.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
 
                 string strfilename1 = OpenFileDialog2.FileName;
                 EXCELFILEPATH.Text = strfilename1;
                 Globals.xlsxFileName = strfilename1;
                 Globals.xmlFileName = Path.GetFileNameWithoutExtension(strfilename1) + ".xml";
                 Globals.getExcel();
-              }
+
+            }
         }
     }
 }
